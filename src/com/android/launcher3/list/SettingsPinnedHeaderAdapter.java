@@ -300,7 +300,7 @@ public class SettingsPinnedHeaderAdapter extends PinnedHeaderListAdapter {
                                     SettingsProvider.SETTINGS_UI_HOMESCREEN_REMOTE_FOLDER,
                                     R.bool.preferences_interface_homescreen_remote_folder_default,
                                     false);
-                            mLauncher.getRemoteFolderManager().onSettingChanged();
+//                            mLauncher.getRemoteFolderManager().onSettingChanged();
                             break;
                     }
                     break;
@@ -355,7 +355,7 @@ public class SettingsPinnedHeaderAdapter extends PinnedHeaderListAdapter {
                             onSettingsBooleanChanged(v,
                                     SettingsProvider.SETTINGS_UI_DRAWER_REMOTE_APPS,
                                     R.bool.preferences_interface_drawer_remote_apps_default, false);
-                            mLauncher.getRemoteFolderManager().onSettingChanged();
+//                            mLauncher.getRemoteFolderManager().onSettingChanged();
                             break;
                     }
                     break;

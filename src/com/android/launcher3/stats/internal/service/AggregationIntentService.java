@@ -36,7 +36,7 @@ import com.android.launcher3.stats.internal.db.DatabaseHelper;
 import com.android.launcher3.stats.internal.model.CountAction;
 import com.android.launcher3.stats.internal.model.CountOriginByPackageAction;
 import com.android.launcher3.stats.internal.model.ITrackingAction;
-import com.android.launcher3.stats.internal.model.RemoteFolderAction;
+//import com.android.launcher3.stats.internal.model.RemoteFolderAction;
 import com.android.launcher3.stats.internal.model.TrackingEvent;
 import com.android.launcher3.stats.util.Logger;
 
@@ -119,7 +119,7 @@ public class AggregationIntentService extends IntentService {
             // Now crunch the data into actionable events for the server.
             // Remote Folder data will process itself separately.
             if (category == TrackingEvent.Category.REMOTE_FOLDER) {
-                performTrackingCall(new RemoteFolderAction(), category, eventList);
+//                performTrackingCall(new RemoteFolderAction(), category, eventList);
             } else {
                 for (ITrackingAction action : TRACKED_ACTIONS) {
                     performTrackingCall(action, category, eventList);

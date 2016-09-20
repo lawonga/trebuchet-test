@@ -63,8 +63,8 @@
     <color name="widgets_cell_color">#263238</color>
 
     <!-- CM Settings -->
-    <color name="settings_bg_color">#424242</color>
-    <color name="settings_header_text">#00B1E5</color>
+    <!--<color name="settings_bg_color">#424242</color>-->
+    <!--<color name="settings_header_text">#00B1E5</color>-->
 
     <color name="dynamic_grid_preview_background">#FFFFFFFF</color>
     <color name="dynamic_grid_preview_foreground">#FF000000</color>

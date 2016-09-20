@@ -72,9 +72,9 @@ import com.android.launcher3.settings.SettingsProvider;
 import com.android.launcher3.util.Thunk;
 import com.android.launcher3.util.UiThreadCircularReveal;
 
-import static cyanogenmod.content.Intent.ACTION_PROTECTED;
-import static cyanogenmod.content.Intent.EXTRA_PROTECTED_COMPONENTS;
-import static cyanogenmod.content.Intent.EXTRA_PROTECTED_STATE;
+//import static cyanogenmod.content.Intent.ACTION_PROTECTED;
+//import static cyanogenmod.content.Intent.EXTRA_PROTECTED_COMPONENTS;
+//import static cyanogenmod.content.Intent.EXTRA_PROTECTED_STATE;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -316,11 +316,11 @@ public class Folder extends LinearLayout implements DragSource, View.OnClickList
         }
 
         Intent intent = new Intent();
-        intent.setAction(ACTION_PROTECTED);
+//        intent.setAction(ACTION_PROTECTED);
         // flip the boolean value to accomodate framework
         // in framework "false" is "protected" and "true" is "visible"
-        intent.putExtra(EXTRA_PROTECTED_STATE, !protect);
-        intent.putExtra(EXTRA_PROTECTED_COMPONENTS, components);
+//        intent.putExtra(EXTRA_PROTECTED_STATE, !protect);
+//        intent.putExtra(EXTRA_PROTECTED_COMPONENTS, components);
 
         mLauncher.sendBroadcast(intent);
     }
@@ -329,11 +329,11 @@ public class Folder extends LinearLayout implements DragSource, View.OnClickList
         ArrayList<ComponentName> components = new ArrayList<>();
         components.add(componentName);
         Intent intent = new Intent();
-        intent.setAction(ACTION_PROTECTED);
+//        intent.setAction(ACTION_PROTECTED);
         // flip the boolean value to accomodate framework
         // in framework "false" is "protected" and "true" is "visible"
-        intent.putExtra(EXTRA_PROTECTED_STATE, true);
-        intent.putExtra(EXTRA_PROTECTED_COMPONENTS, components);
+//        intent.putExtra(EXTRA_PROTECTED_STATE, true);
+//        intent.putExtra(EXTRA_PROTECTED_COMPONENTS, components);
 
         mLauncher.sendBroadcast(intent);
     }

@@ -42,7 +42,6 @@ import com.android.launcher3.BaseRecyclerViewFastScrollBar.FastScrollFocusable;
 import com.android.launcher3.BubbleTextView;
 import com.android.launcher3.Launcher;
 import com.android.launcher3.R;
-import com.android.launcher3.RemoteFolderManager;
 import com.android.launcher3.Utilities;
 import com.android.launcher3.settings.SettingsProvider;
 import com.android.launcher3.util.Thunk;
@@ -329,7 +328,6 @@ public class AllAppsGridAdapter extends RecyclerView.Adapter<AllAppsGridAdapter.
         }
     }
 
-    private final RemoteFolderManager mRemoteFolderManager;
 
     private Launcher mLauncher;
     private LayoutInflater mLayoutInflater;
@@ -420,7 +418,7 @@ public class AllAppsGridAdapter extends RecyclerView.Adapter<AllAppsGridAdapter.
             mMarketAppName = marketInfo.loadLabel(pm).toString();
         }
 
-        mRemoteFolderManager = launcher.getRemoteFolderManager();
+//        mRemoteFolderManager = launcher.getRemoteFolderManager();
     }
 
     /**
@@ -529,7 +527,7 @@ public class AllAppsGridAdapter extends RecyclerView.Adapter<AllAppsGridAdapter.
                                 FastScrollFocusable.FAST_SCROLL_FOCUS_SCALABLE);
 
                 ViewHolder holder = new ViewHolder(icon);
-                mRemoteFolderManager.onCreateViewHolder(holder, viewType);
+//                mRemoteFolderManager.onCreateViewHolder(holder, viewType);
 
                 return holder;
             }
@@ -555,14 +553,14 @@ public class AllAppsGridAdapter extends RecyclerView.Adapter<AllAppsGridAdapter.
                 FastScrollFocusApplicator.createApplicator(v,
                         FastScrollFocusable.FAST_SCROLL_FOCUS_DIMMABLE);
                 ViewHolder holder = new ViewHolder(v);
-                mRemoteFolderManager.onCreateViewHolder(holder, viewType);
+//                mRemoteFolderManager.onCreateViewHolder(holder, viewType);
                 return holder;
             }
             case CUSTOM_PREDICTED_APPS_FOOTER_VIEW_TYPE: {
                 View v = mLayoutInflater.inflate(R.layout.custom_predicted_apps_footer,
                         parent, false);
                 ViewHolder holder = new ViewHolder(v);
-                mRemoteFolderManager.onCreateViewHolder(holder, viewType);
+//                mRemoteFolderManager.onCreateViewHolder(holder, viewType);
                 return holder;
             }
             default:
@@ -603,7 +601,7 @@ public class AllAppsGridAdapter extends RecyclerView.Adapter<AllAppsGridAdapter.
                         !mIconsDimmed);
                 FastScrollFocusApplicator.setFastScrollFocused(icon, false, !mIconsDimmed);
 
-                mRemoteFolderManager.onBindViewHolder(holder, info);
+//                mRemoteFolderManager.onBindViewHolder(holder, info);
                 break;
             }
             case EMPTY_SEARCH_VIEW_TYPE:

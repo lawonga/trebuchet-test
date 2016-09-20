@@ -18,7 +18,7 @@ package com.android.launcher3;
 
 import android.content.ComponentName;
 import android.content.Context;
-import cyanogenmod.providers.CMSettings;
+//import cyanogenmod.providers.CMSettings;
 
 import java.util.ArrayList;
 
@@ -35,21 +35,21 @@ public class ProtectedComponentsHelper {
      * of protected apps and packages
      * @param context Context
      */
-    public static void updateProtectedComponentsLists(Context context) {
-        String protectedComponents = CMSettings.Secure.getString(context.getContentResolver(),
-                CMSettings.Secure.PROTECTED_COMPONENTS);
-        protectedComponents = protectedComponents == null ? "" : protectedComponents;
-        String [] flattened = protectedComponents.split("\\|");
-        sProtectedApps = new ArrayList<ComponentName>(flattened.length);
-        sProtectedPackages = new ArrayList<String>(flattened.length);
-        for (String flat : flattened) {
-            ComponentName cmp = ComponentName.unflattenFromString(flat);
-            if (cmp != null) {
-                sProtectedApps.add(cmp);
-                sProtectedPackages.add(cmp.getPackageName());
-            }
-        }
-    }
+//    public static void updateProtectedComponentsLists(Context context) {
+//        String protectedComponents = CMSettings.Secure.getString(context.getContentResolver(),
+//                CMSettings.Secure.PROTECTED_COMPONENTS);
+//        protectedComponents = protectedComponents == null ? "" : protectedComponents;
+//        String [] flattened = protectedComponents.split("\\|");
+//        sProtectedApps = new ArrayList<ComponentName>(flattened.length);
+//        sProtectedPackages = new ArrayList<String>(flattened.length);
+//        for (String flat : flattened) {
+//            ComponentName cmp = ComponentName.unflattenFromString(flat);
+//            if (cmp != null) {
+//                sProtectedApps.add(cmp);
+//                sProtectedPackages.add(cmp.getPackageName());
+//            }
+//        }
+//    }
 
     /**
      * Checks if the given combination of {@link ComponentName} and flags is for a protected app

@@ -77,7 +77,7 @@ public class DeleteDropTarget extends ButtonDropTarget {
 
             // Remote folder should not really be deleted. Let the manager handle it.
             if (folder.isRemote()) {
-                launcher.getRemoteFolderManager().onFolderDeleted();
+//                launcher.getRemoteFolderManager().onFolderDeleted();
             } else {
                 launcher.removeFolder(folder);
                 LauncherModel.deleteFolderContentsFromDatabase(launcher, folder);

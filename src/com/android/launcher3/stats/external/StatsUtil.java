@@ -27,7 +27,7 @@ import android.util.Log;
 
 import com.android.launcher3.LauncherApplication;
 import com.android.launcher3.stats.util.Logger;
-import com.cyanogen.ambient.analytics.Event;
+//import com.cyanogen.ambient.analytics.Event;
 
 /**
  * StatsUtil
@@ -64,31 +64,31 @@ public class StatsUtil {
             Logger.logd(TAG, "No tracking id in bundle");
             return;
         } else {
-            if (trackingBundle.containsKey(TrackingBundle.KEY_EVENT_CATEGORY)
-                    && trackingBundle.containsKey(TrackingBundle.KEY_EVENT_ACTION)) {
-
-                final Event.Builder builder = new Event.Builder(
-                        trackingBundle.getString(TrackingBundle.KEY_EVENT_CATEGORY),
-                        trackingBundle.getString(TrackingBundle.KEY_EVENT_ACTION));
-
-                if (trackingBundle.containsKey(TrackingBundle.KEY_METADATA_ORIGIN)) {
-                    builder.addField(TrackingBundle.KEY_METADATA_ORIGIN,
-                            trackingBundle.getString(TrackingBundle.KEY_METADATA_ORIGIN));
-                }
-                if (trackingBundle.containsKey(TrackingBundle.KEY_METADATA_PACKAGE)) {
-                    builder.addField(TrackingBundle.KEY_METADATA_PACKAGE,
-                            trackingBundle.getString(TrackingBundle.KEY_METADATA_PACKAGE));
-                }
-                if (trackingBundle.containsKey(TrackingBundle.KEY_METADATA_VALUE)) {
-                    builder.addField(TrackingBundle.KEY_METADATA_VALUE,
-                            String.valueOf(trackingBundle.get(TrackingBundle.KEY_METADATA_VALUE)));
-                }
-                ((LauncherApplication)context.getApplicationContext()).sendEvent(builder.build());
-
-                Logger.logd(TAG, trackingBundle.toString());
-            } else {
-                Logger.logd(TAG, "Not a valid tracking bundle");
-            }
+//            if (trackingBundle.containsKey(TrackingBundle.KEY_EVENT_CATEGORY)
+//                    && trackingBundle.containsKey(TrackingBundle.KEY_EVENT_ACTION)) {
+//
+//                final Event.Builder builder = new Event.Builder(
+//                        trackingBundle.getString(TrackingBundle.KEY_EVENT_CATEGORY),
+//                        trackingBundle.getString(TrackingBundle.KEY_EVENT_ACTION));
+//
+//                if (trackingBundle.containsKey(TrackingBundle.KEY_METADATA_ORIGIN)) {
+//                    builder.addField(TrackingBundle.KEY_METADATA_ORIGIN,
+//                            trackingBundle.getString(TrackingBundle.KEY_METADATA_ORIGIN));
+//                }
+//                if (trackingBundle.containsKey(TrackingBundle.KEY_METADATA_PACKAGE)) {
+//                    builder.addField(TrackingBundle.KEY_METADATA_PACKAGE,
+//                            trackingBundle.getString(TrackingBundle.KEY_METADATA_PACKAGE));
+//                }
+//                if (trackingBundle.containsKey(TrackingBundle.KEY_METADATA_VALUE)) {
+//                    builder.addField(TrackingBundle.KEY_METADATA_VALUE,
+//                            String.valueOf(trackingBundle.get(TrackingBundle.KEY_METADATA_VALUE)));
+//                }
+//                ((LauncherApplication)context.getApplicationContext()).sendEvent(builder.build());
+//
+//                Logger.logd(TAG, trackingBundle.toString());
+//            } else {
+//                Logger.logd(TAG, "Not a valid tracking bundle");
+//            }
         }
     }
 

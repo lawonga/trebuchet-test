@@ -175,15 +175,16 @@ public class FolderIcon extends FrameLayout implements FolderListener {
         icon.setContentDescription(String.format(launcher.getString(R.string.folder_name_format),
                 folderInfo.title));
         Folder folder;
-        if (folderInfo.isRemote()) {
-            folder = launcher.getRemoteFolderManager().createRemoteFolder(icon, launcher.getDragLayer());
-            if (folder == null) {
-                LauncherModel.deleteItemFromDatabase(launcher, folderInfo);
-                return null;
-            }
-        } else {
-            folder = Folder.fromXml(launcher, launcher.getDragLayer());
-        }
+//        if (folderInfo.isRemote()) {
+//            folder = launcher.getRemoteFolderManager().createRemoteFolder(icon, launcher.getDragLayer());
+//            if (folder == null) {
+//                LauncherModel.deleteItemFromDatabase(launcher, folderInfo);
+//                return null;
+//            }
+//        } else {
+//            folder = Folder.fromXml(launcher, launcher.getDragLayer());
+//        }
+        folder = Folder.fromXml(launcher, launcher.getDragLayer());
         folder.setDragController(launcher.getDragController());
         folder.setFolderIcon(icon);
         folder.bind(folderInfo);
@@ -247,7 +248,7 @@ public class FolderIcon extends FrameLayout implements FolderListener {
 
         // Create an overlay badge if this FolderIcon is for a RemoteFolder
         if (folderInfo.isRemote()) {
-            icon = RemoteFolderManager.addBadgeToFolderIcon(icon);
+//            icon = RemoteFolderManager.addBadgeToFolderIcon(icon);
         }
 
         return icon;
@@ -740,13 +741,18 @@ public class FolderIcon extends FrameLayout implements FolderListener {
         if (!mAnimating) {
             for (int i = 0; i < NUM_ITEMS_IN_PREVIEW; i++) {
                 d = null;
-                if (mInfo.isRemote()) {
-                    d = mLauncher.getRemoteFolderManager().getFolderIconDrawable(items, i);
-                } else if (i < items.size()) {
-                    v = (TextView) items.get(i);
-                    if (!mHiddenItems.contains(v.getTag())) {
-                        d = getTopDrawable(v);
-                    }
+//                if (mInfo.isRemote()) {
+//                    d = mLauncher.getRemoteFolderManager().getFolderIconDrawable(items, i);
+//                } else if (i < items.size()) {
+//                    v = (TextView) items.get(i);
+//                    if (!mHiddenItems.contains(v.getTag())) {
+//                        d = getTopDrawable(v);
+//                    }
+//                }
+
+                v = (TextView) items.get(i);
+                if (!mHiddenItems.contains(v.getTag())) {
+                    d = getTopDrawable(v);
                 }
 
                 if (d != null) {

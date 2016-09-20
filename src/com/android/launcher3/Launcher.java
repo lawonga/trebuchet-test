@@ -282,7 +282,6 @@ public class Launcher extends Activity
     private DynamicGridSizeFragment mDynamicGridSizeFragment;
     private boolean mIsHiddenMenuOptionEnabled;
 
-    protected static RemoteFolderManager sRemoteFolderManager;
 
     private AppWidgetManagerCompat mAppWidgetManager;
     private LauncherAppWidgetHost mAppWidgetHost;
@@ -612,12 +611,6 @@ public class Launcher extends Activity
 
         mAppWidgetHost = new LauncherAppWidgetHost(this, APPWIDGET_HOST_ID);
 
-        if (sRemoteFolderManager == null) {
-            sRemoteFolderManager = new RemoteFolderManager(this);
-        } else {
-            sRemoteFolderManager.onRecreateLauncher(this);
-        }
-
         // If we are getting an onCreate, we can actually preempt onResume and unset mPaused here,
         // this also ensures that any synchronous binding below doesn't re-trigger another
         // LauncherModel load.
@@ -697,10 +690,10 @@ public class Launcher extends Activity
             showFirstRunClings();
         }
 
-        IntentFilter protectedAppsFilter = new IntentFilter(
-                cyanogenmod.content.Intent.ACTION_PROTECTED_CHANGED);
-        registerReceiver(protectedAppsChangedReceiver, protectedAppsFilter,
-                cyanogenmod.platform.Manifest.permission.PROTECTED_APP, null);
+//        IntentFilter protectedAppsFilter = new IntentFilter(
+//                cyanogenmod.content.Intent.ACTION_PROTECTED_CHANGED);
+//        registerReceiver(protectedAppsChangedReceiver, protectedAppsFilter,
+//                cyanogenmod.platform.Manifest.permission.PROTECTED_APP, null);
 
         IntentFilter searchBarVisibilityFilter = new IntentFilter(
                 SettingsPinnedHeaderAdapter.ACTION_SEARCH_BAR_VISIBILITY_CHANGED);
@@ -1785,7 +1778,7 @@ public class Launcher extends Activity
             mWeightWatcher.setVisibility(show ? View.VISIBLE : View.GONE);
         }
 
-        sRemoteFolderManager.onSetupViews();
+//        sRemoteFolderManager.onSetupViews();
     }
 
     /**
@@ -2043,7 +2036,7 @@ public class Launcher extends Activity
         mAppsView.addApps(addedApps);
         tryAndUpdatePredictedApps();
         mAppsView.onReloadAppDrawer();
-        sRemoteFolderManager.onReloadAppDrawer();
+//        sRemoteFolderManager.onReloadAppDrawer();
     }
 
     public void reloadWidgetView() {
@@ -2102,7 +2095,7 @@ public class Launcher extends Activity
         }
 
         // Must be called after reload and before settings invalidation.
-        sRemoteFolderManager.onGridSizeChanged();
+//        sRemoteFolderManager.onGridSizeChanged();
 
         mOverviewSettingsPanel.notifyDataSetInvalidated();
 
@@ -2313,10 +2306,6 @@ public class Launcher extends Activity
 
     public Workspace getWorkspace() {
         return mWorkspace;
-    }
-
-    public RemoteFolderManager getRemoteFolderManager() {
-        return sRemoteFolderManager;
     }
 
     public Hotseat getHotseat() {
@@ -3983,7 +3972,7 @@ public class Launcher extends Activity
         }
         showAppsOrWidgets(State.APPS, animated, focusSearchBar);
 
-        sRemoteFolderManager.onAppDrawerOpened();
+//        sRemoteFolderManager.onAppDrawerOpened();
     }
 
     /**
@@ -4402,7 +4391,7 @@ public class Launcher extends Activity
 
         if (addedApps != null && mAppsView != null) {
             mAppsView.addApps(addedApps);
-            sRemoteFolderManager.onBindAddApps(addedApps);
+//            sRemoteFolderManager.onBindAddApps(addedApps);
         }
     }
 
@@ -4729,7 +4718,7 @@ public class Launcher extends Activity
 
         mWorkspace.stripEmptyScreens();
 
-        sRemoteFolderManager.bindFinished();
+//        sRemoteFolderManager.bindFinished();
         bindSearchProviderChanged();
     }
 

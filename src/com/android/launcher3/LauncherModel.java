@@ -64,7 +64,6 @@ import com.android.launcher3.util.CursorIconInfo;
 import com.android.launcher3.util.LongArrayMap;
 import com.android.launcher3.util.ManagedProfileHeuristic;
 import com.android.launcher3.util.Thunk;
-import cyanogenmod.providers.CMSettings;
 
 import com.android.launcher3.settings.SettingsProvider;
 import com.android.launcher3.stats.internal.service.AggregationIntentService;
@@ -2746,18 +2745,18 @@ public class LauncherModel extends BroadcastReceiver
             ArrayList<ComponentName> mHiddenApps = new ArrayList<ComponentName>();
             ArrayList<String> mHiddenAppsPackages = new ArrayList<String>();
             Context context = mApp.getContext();
-            String protectedComponents = CMSettings.Secure.getString(context.getContentResolver(),
-                    CMSettings.Secure.PROTECTED_COMPONENTS);
-            protectedComponents = protectedComponents == null ? "" : protectedComponents;
-            String[] flattened = protectedComponents.split("\\|");
-
-            for (String flat : flattened) {
-                ComponentName cmp = ComponentName.unflattenFromString(flat);
-                if (cmp != null) {
-                    mHiddenApps.add(cmp);
-                    mHiddenAppsPackages.add(cmp.getPackageName());
-                }
-            }
+//            String protectedComponents = CMSettings.Secure.getString(context.getContentResolver(),
+//                    CMSettings.Secure.PROTECTED_COMPONENTS);
+//            protectedComponents = protectedComponents == null ? "" : protectedComponents;
+//            String[] flattened = protectedComponents.split("\\|");
+//
+//            for (String flat : flattened) {
+//                ComponentName cmp = ComponentName.unflattenFromString(flat);
+//                if (cmp != null) {
+//                    mHiddenApps.add(cmp);
+//                    mHiddenAppsPackages.add(cmp.getPackageName());
+//                }
+//            }
 
             // Shortcuts
             int N = workspaceItems.size() - 1;

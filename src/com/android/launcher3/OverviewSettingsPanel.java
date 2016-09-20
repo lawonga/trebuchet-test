@@ -84,7 +84,7 @@ public class OverviewSettingsPanel {
                 res.getString(R.string.allow_rotation_title)}));
 
         // Add additional external settings.
-        RemoteFolderManager.onInitializeHomeSettings(values, mLauncher);
+//        RemoteFolderManager.onInitializeHomeSettings(values, mLauncher);
 
         String[] valuesArr = new String[values.size()];
         values.toArray(valuesArr);
@@ -102,7 +102,7 @@ public class OverviewSettingsPanel {
                 res.getString(R.string.home_screen_search_text)}));
 
         // Add additional external settings.
-        RemoteFolderManager.onInitializeDrawerSettings(values, mLauncher);
+//        RemoteFolderManager.onInitializeDrawerSettings(values, mLauncher);
 
         String[] valuesArr = new String[values.size()];
         values.toArray(valuesArr);

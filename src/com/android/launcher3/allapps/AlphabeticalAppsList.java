@@ -26,7 +26,7 @@ import com.android.launcher3.compat.AlphabeticIndexCompat;
 import com.android.launcher3.compat.UserHandleCompat;
 import com.android.launcher3.model.AppNameComparator;
 import com.android.launcher3.util.ComponentKey;
-import cyanogenmod.providers.CMSettings;
+//import cyanogenmod.providers.CMSettings;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -510,14 +510,14 @@ public class AlphabeticalAppsList {
                     mFilteredApps.add(info);
                 }
 
-                if (mCustomPredictedAppsEnabled) {
-                    position = mLauncher.getRemoteFolderManager().onUpdateAdapterItems(
-                            mAdapterItems, lastFastScrollerSectionInfo, lastSectionInfo, position);
-                }
+//                if (mCustomPredictedAppsEnabled) {
+//                    position = mLauncher.getRemoteFolderManager().onUpdateAdapterItems(
+//                            mAdapterItems, lastFastScrollerSectionInfo, lastSectionInfo, position);
+//                }
             }
         }
 
-        ProtectedComponentsHelper.updateProtectedComponentsLists(mLauncher);
+//        ProtectedComponentsHelper.updateProtectedComponentsLists(mLauncher);
 
         // Recreate the filtered and sectioned apps (for convenience for the grid layout) from the
         // ordered set of sections

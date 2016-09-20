@@ -378,7 +378,7 @@ public class AllAppsContainerView extends BaseContainerView implements DragSourc
             boolean mergeSections = mSectionStrategy == SECTION_STRATEGY_GRID;
             mApps.setNumAppsPerRow(mNumAppsPerRow, mNumPredictedAppsPerRow, mergeSections);
 
-            mLauncher.getRemoteFolderManager().onMeasureDrawer(mNumPredictedAppsPerRow);
+//            mLauncher.getRemoteFolderManager().onMeasureDrawer(mNumPredictedAppsPerRow);
         }
 
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);

@@ -18,7 +18,6 @@ import com.android.launcher3.Utilities;
 import com.android.launcher3.compat.AlphabeticIndexCompat;
 import com.android.launcher3.compat.AppWidgetManagerCompat;
 import com.android.launcher3.compat.UserHandleCompat;
-import cyanogenmod.providers.CMSettings;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -115,7 +114,7 @@ public class WidgetsModel {
         mWidgetAndShortcutNameComparator.reset();
 
         InvariantDeviceProfile idp = LauncherAppState.getInstance().getInvariantDeviceProfile();
-        ProtectedComponentsHelper.updateProtectedComponentsLists(mContext);
+//        ProtectedComponentsHelper.updateProtectedComponentsLists(mContext);
 
         // add and update.
         for (Object o: rawWidgetsShortcuts) {

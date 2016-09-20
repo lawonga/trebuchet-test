@@ -24,9 +24,9 @@ import android.content.IntentFilter;
 
 import com.android.launcher3.stats.LauncherStats;
 import com.android.launcher3.stats.internal.service.AggregationIntentService;
-import com.cyanogen.ambient.analytics.AnalyticsServices;
-import com.cyanogen.ambient.analytics.Event;
-import com.cyanogen.ambient.common.api.AmbientApiClient;
+//import com.cyanogen.ambient.analytics.AnalyticsServices;
+//import com.cyanogen.ambient.analytics.Event;
+//import com.cyanogen.ambient.common.api.AmbientApiClient;
 
 public class LauncherApplication extends Application {
 
@@ -36,7 +36,7 @@ public class LauncherApplication extends Application {
     private final String STK_APP_NAME = "StkTitle";
 
     private static LauncherStats sLauncherStats = null;
-    private AmbientApiClient mClient;
+//    private AmbientApiClient mClient;
 
     /**
      * Get the reference handle for LauncherStats commands
@@ -50,10 +50,10 @@ public class LauncherApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        mClient = new AmbientApiClient.Builder(this)
-                .addApi(AnalyticsServices.API)
-                .build();
-        mClient.connect();
+//        mClient = new AmbientApiClient.Builder(this)
+//                .addApi(AnalyticsServices.API)
+//                .build();
+//        mClient.connect();
         if (getResources().getBoolean(R.bool.config_launcher_stkAppRename)) {
             registerAppNameChangeReceiver();
         }
@@ -80,10 +80,10 @@ public class LauncherApplication extends Application {
         return mStkAppName;
     }
 
-    public void sendEvent(Event event) {
-        if (mClient.isConnected()) {
-            AnalyticsServices.AnalyticsApi.sendEvent(mClient, event);
-        }
-    }
+//    public void sendEvent(Event event) {
+//        if (mClient.isConnected()) {
+//            AnalyticsServices.AnalyticsApi.sendEvent(mClient, event);
+//        }
+//    }
 
 }
